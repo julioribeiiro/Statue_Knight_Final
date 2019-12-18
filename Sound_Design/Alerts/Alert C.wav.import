@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Alert C.wav-fd88697546fa49a6ec978f7700af9803.sample"
+
+[deps]
+
+source_file="res://Sound_Design/Alerts/Alert C.wav"
+dest_files=[ "res://.import/Alert C.wav-fd88697546fa49a6ec978f7700af9803.sample" ]
+
+[params]
+
+force/8_bit=true
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

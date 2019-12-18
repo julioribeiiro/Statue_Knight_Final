@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/SFX_Monster_Dragon_Ataque_2.ogg-1cf4c300f0f2d41d6d377e22d058d3b6.oggstr"
+
+[deps]
+
+source_file="res://Sound_Design/SFX/SFX_Monster_Dragon_Ataque_2.ogg"
+dest_files=[ "res://.import/SFX_Monster_Dragon_Ataque_2.ogg-1cf4c300f0f2d41d6d377e22d058d3b6.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

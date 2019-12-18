@@ -1,0 +1,91 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://selecao_de_estagios.gd" type="Script" id=1]
+[ext_resource path="res://Imagens_novas/Morgan assets/Selecao/SELECAO DE ESTAGIO MOCKUP (1).png" type="Texture" id=2]
+[ext_resource path="res://Imagens_novas/Morgan assets/Selecao/Button_Unlocked.png" type="Texture" id=3]
+[ext_resource path="res://Sound_Design/OST/OST_Menu.ogg" type="AudioStream" id=4]
+[ext_resource path="res://Imagens_novas/Interface.png" type="Texture" id=5]
+[ext_resource path="res://Minecraft.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://Sound_Design/SFX/SFX_Button_Hited_Play.ogg" type="AudioStream" id=7]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 70
+font_data = ExtResource( 6 )
+
+[node name="principal" type="Node"]
+script = ExtResource( 1 )
+
+[node name="tela" type="Sprite" parent="."]
+position = Vector2( 958.618, 539.495 )
+scale = Vector2( 5, 5 )
+texture = ExtResource( 2 )
+
+[node name="botao_0" type="TouchScreenButton" parent="."]
+position = Vector2( 323.687, 252.228 )
+normal = ExtResource( 3 )
+
+[node name="botao_1" type="TouchScreenButton" parent="."]
+position = Vector2( 253.37, 531.574 )
+normal = ExtResource( 3 )
+
+[node name="botao_4" type="TouchScreenButton" parent="."]
+position = Vector2( 1273.83, 501.684 )
+normal = ExtResource( 3 )
+
+[node name="botao_5" type="TouchScreenButton" parent="."]
+position = Vector2( 1279.04, 146.675 )
+normal = ExtResource( 3 )
+
+[node name="botao_2" type="TouchScreenButton" parent="."]
+position = Vector2( 558.457, 767.027 )
+normal = ExtResource( 3 )
+
+[node name="botao_3" type="TouchScreenButton" parent="."]
+position = Vector2( 1018.48, 676.808 )
+normal = ExtResource( 3 )
+
+[node name="botao_6" type="TouchScreenButton" parent="."]
+position = Vector2( 668.85, 221.04 )
+normal = ExtResource( 3 )
+
+[node name="fundo" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = 20.505
+autoplay = true
+
+[node name="fundo_select" type="Sprite" parent="."]
+visible = false
+position = Vector2( 1464.9, 376.108 )
+texture = ExtResource( 5 )
+
+[node name="select" type="Label" parent="."]
+margin_left = 46.9581
+margin_top = 67.2897
+margin_right = 158.958
+margin_bottom = 83.2897
+rect_scale = Vector2( 5, 5 )
+custom_fonts/font = SubResource( 1 )
+text = "Select a stage."
+
+[node name="click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+volume_db = 10.602
+
+[node name="infinity" type="Label" parent="."]
+margin_left = 806.373
+margin_top = 219.36
+margin_right = 1177.37
+margin_bottom = 290.36
+rect_scale = Vector2( 0.495489, 0.495489 )
+custom_fonts/font = SubResource( 2 )
+text = "Infinity run"
+[connection signal="pressed" from="botao_0" to="." method="_on_botao_0_pressed"]
+[connection signal="pressed" from="botao_1" to="." method="_on_botao_1_pressed"]
+[connection signal="pressed" from="botao_4" to="." method="_on_botao_4_pressed"]
+[connection signal="pressed" from="botao_5" to="." method="_on_botao_5_pressed"]
+[connection signal="pressed" from="botao_2" to="." method="_on_botao_2_pressed"]
+[connection signal="pressed" from="botao_3" to="." method="_on_botao_3_pressed"]
+[connection signal="pressed" from="botao_6" to="." method="_on_botao_6_pressed"]

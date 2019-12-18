@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Walk.wav-2bb8583d00cbd6c2136d7799247a077a.sample"
+
+[deps]
+
+source_file="res://Sound_Design/Statue Knight/Walk.wav"
+dest_files=[ "res://.import/Walk.wav-2bb8583d00cbd6c2136d7799247a077a.sample" ]
+
+[params]
+
+force/8_bit=true
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

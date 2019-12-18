@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/TurnStatuePerfect.wav-94a97950e32285cce7ae3cdd9a9ff906.sample"
+
+[deps]
+
+source_file="res://Sound_Design/Statue Knight/TurnStatuePerfect.wav"
+dest_files=[ "res://.import/TurnStatuePerfect.wav-94a97950e32285cce7ae3cdd9a9ff906.sample" ]
+
+[params]
+
+force/8_bit=true
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

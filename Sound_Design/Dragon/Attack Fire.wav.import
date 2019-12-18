@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Attack Fire.wav-a2eb0c85d19177370f38f5a12a67e775.sample"
+
+[deps]
+
+source_file="res://Sound_Design/Dragon/Attack Fire.wav"
+dest_files=[ "res://.import/Attack Fire.wav-a2eb0c85d19177370f38f5a12a67e775.sample" ]
+
+[params]
+
+force/8_bit=true
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

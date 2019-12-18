@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/OST_Cemiterio_Loop.ogg-fcd9a12162b236e2d63ad1854ba87e80.oggstr"
+
+[deps]
+
+source_file="res://Sound_Design/OST/OST_Cemiterio_Loop.ogg"
+dest_files=[ "res://.import/OST_Cemiterio_Loop.ogg-fcd9a12162b236e2d63ad1854ba87e80.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

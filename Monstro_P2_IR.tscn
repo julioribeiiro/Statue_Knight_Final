@@ -1,0 +1,110 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://Monstro_P2_IR.gd" type="Script" id=1]
+[ext_resource path="res://Imagens_novas/Monstros/Red_Full_knight/Zombie_Armless_Red_Standing.png" type="Texture" id=2]
+[ext_resource path="res://Imagens_novas/Monstros/Red_Full_knight/Zombie_Armless_Red_Prepare.png" type="Texture" id=3]
+[ext_resource path="res://Imagens_novas/Monstros/Red_Full_knight/Zombie_Armless_Red_PrepareAlpha.png" type="Texture" id=4]
+[ext_resource path="res://Imagens_novas/Monstros/Red_Full_knight/Zombie_Armless_Red_PrepareGamma.png" type="Texture" id=5]
+[ext_resource path="res://Imagens_novas/Monstros/Red_Full_knight/Zombie_Armless_Red_Hurt.png" type="Texture" id=6]
+[ext_resource path="res://Imagens_novas/Monstros/Red_Full_knight/Zombie_Armless_Red_Attacking.png" type="Texture" id=7]
+[ext_resource path="res://stun.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Sound_Design/Alerts/Alert A.wav" type="AudioStream" id=9]
+[ext_resource path="res://Sound_Design/Alerts/Alert C.wav" type="AudioStream" id=10]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ],
+"loop": false,
+"name": "New Anim",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 157.954, 287.7 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 437.91, 10 )
+
+[sub_resource type="Animation" id=4]
+resource_name = "morte"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("sprites_monstro:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 1, 1.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 1.1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "monstro_morreu"
+} ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("sprites_monstro:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false, true, false, true ]
+}
+
+[node name="Monstro_P2_IR" type="StaticBody2D"]
+script = ExtResource( 1 )
+
+[node name="sprites_monstro" type="AnimatedSprite" parent="."]
+modulate = Color( 0.714286, 0.714286, 0.714286, 1 )
+frames = SubResource( 1 )
+animation = "New Anim"
+
+[node name="shape_colisao" type="CollisionShape2D" parent="."]
+position = Vector2( 64.7869, 38.565 )
+shape = SubResource( 2 )
+
+[node name="area_ataque" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 4
+
+[node name="shape_ataque" type="CollisionShape2D" parent="area_ataque"]
+position = Vector2( -394.608, 116.114 )
+shape = SubResource( 3 )
+
+[node name="animacoes" type="AnimationPlayer" parent="."]
+anims/morte = SubResource( 4 )
+
+[node name="Label" type="Label" parent="."]
+visible = false
+margin_left = -432.284
+margin_top = -457.167
+margin_right = -326.284
+margin_bottom = -443.167
+rect_scale = Vector2( 8.82413, 8.82413 )
+text = "Monstro Ponte 2"
+
+[node name="stun" parent="." instance=ExtResource( 8 )]
+position = Vector2( 129.267, -279.375 )
+frame = 3
+
+[node name="alertA" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 9 )
+
+[node name="alertC" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 10 )

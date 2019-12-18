@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Attack DF04.wav-4d07764f096d0e8c7cc64f1017977d8d.sample"
+
+[deps]
+
+source_file="res://Sound_Design/Statue Knight/Attack DF04.wav"
+dest_files=[ "res://.import/Attack DF04.wav-4d07764f096d0e8c7cc64f1017977d8d.sample" ]
+
+[params]
+
+force/8_bit=true
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

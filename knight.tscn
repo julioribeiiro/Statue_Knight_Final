@@ -1,0 +1,668 @@
+[gd_scene load_steps=44 format=2]
+
+[ext_resource path="res://knight.gd" type="Script" id=1]
+[ext_resource path="res://Imagens_novas/Knight/Knight_Sprites_Standing-2.png" type="Texture" id=2]
+[ext_resource path="res://Imagens_novas/Knight/Knight_Sprites_Walk1-2.png" type="Texture" id=3]
+[ext_resource path="res://Imagens_novas/Knight/Knight_Sprites_Walk2-2.png" type="Texture" id=4]
+[ext_resource path="res://Imagens_novas/Knight/Knight_Sprites_Attacking.png" type="Texture" id=5]
+[ext_resource path="res://Imagens_novas/Knight/Knight_Sprites_Dead-2.png" type="Texture" id=6]
+[ext_resource path="res://Imagens_novas/Knight/Knight_Sprites_Hurt-2.png" type="Texture" id=7]
+[ext_resource path="res://Imagens_novas/Knight/Knight_Sprites_Statue.png" type="Texture" id=8]
+[ext_resource path="res://hud.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Imagens_novas/Interface.png" type="Texture" id=10]
+[ext_resource path="res://Minecraft.ttf" type="DynamicFontData" id=11]
+[ext_resource path="res://Imagens_novas/Interface_grande-2.png" type="Texture" id=12]
+[ext_resource path="res://Sound_Design/SFX/SFX_Button_Hited_Play.ogg" type="AudioStream" id=13]
+[ext_resource path="res://Sound_Design/SFX/SFX_Player_Passos.ogg" type="AudioStream" id=14]
+[ext_resource path="res://Sound_Design/SFX/SFX_Monster_Dragon_Chegada].ogg" type="AudioStream" id=15]
+[ext_resource path="res://Sound_Design/Statue Knight/Attack HT04.wav" type="AudioStream" id=16]
+[ext_resource path="res://Sound_Design/Statue Knight/TurnStatue.wav" type="AudioStream" id=17]
+[ext_resource path="res://Sound_Design/Statue Knight/TurnStatuePerfect.wav" type="AudioStream" id=18]
+[ext_resource path="res://Sound_Design/Statue Knight/Die.wav" type="AudioStream" id=19]
+[ext_resource path="res://Sound_Design/Statue Knight/Attack DF04.wav" type="AudioStream" id=20]
+[ext_resource path="res://Sound_Design/Statue Knight/Hit HL.wav" type="AudioStream" id=21]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "walk",
+"speed": 1.7
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "attack",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "dead",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "hurt",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
+"name": "stone",
+"speed": 5.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 111.796
+height = 145.904
+
+[sub_resource type="CapsuleShape2D" id=3]
+radius = 111.956
+height = 175.253
+
+[sub_resource type="RectangleShape2D" id=4]
+
+[sub_resource type="Animation" id=5]
+resource_name = "shake_defesa"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("camera:zoom")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 0.98, 0.98 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+length = 0.22
+step = 0.03
+tracks/0/type = "value"
+tracks/0/path = NodePath("camera:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.03, 0.06, 0.09, 0.12, 0.15, 0.18, 0.21 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 20, 0 ), Vector2( 0, 0 ), Vector2( -20, 0 ), Vector2( 0, 0 ), Vector2( 20, 0 ), Vector2( 0, 0 ), Vector2( -20, 0 ), Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+length = 0.21
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("interface:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.21 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 0.95, 0.95 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("camera:zoom")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.21 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 0.95, 0.95 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("interface:margin_top")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.21 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -800.0, -770.0 ]
+}
+
+[sub_resource type="Animation" id=8]
+length = 0.35
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("camera:zoom")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.35 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.95, 0.95 ), Vector2( 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("interface:rect_scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.35 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.95, 1 ), Vector2( 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("interface:margin_top")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.35 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -770.0, -800.0 ]
+}
+
+[sub_resource type="Animation" id=9]
+length = 0.5
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("camera:zoom")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.21, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.95, 0.95 ), Vector2( 0.9, 0.9 ), Vector2( 0.9, 0.9 ), Vector2( 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("camera:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.03, 0.06, 0.09, 0.12, 0.15, 0.18, 0.21 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 20, 0 ), Vector2( 0, 0 ), Vector2( -20, 0 ), Vector2( 0, 0 ), Vector2( 20, 0 ), Vector2( 0, 0 ), Vector2( -20, 0 ), Vector2( 0, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("interface:rect_scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.21, 0.41, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.95, 0.95 ), Vector2( 0.9, 0.9 ), Vector2( 0.9, 0.9 ), Vector2( 1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("interface:margin_top")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.21, 0.41, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ -770, -752.0, -752.0, -800 ]
+}
+
+[sub_resource type="RectangleShape2D" id=10]
+
+[sub_resource type="DynamicFont" id=11]
+font_data = ExtResource( 11 )
+
+[sub_resource type="Animation" id=12]
+resource_name = "restart"
+tracks/0/type = "value"
+tracks/0/path = NodePath("restart:custom_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0.321569, 0.321569, 0.321569, 1 ) ]
+}
+
+[sub_resource type="Animation" id=13]
+resource_name = "stages"
+tracks/0/type = "value"
+tracks/0/path = NodePath("stages:custom_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0.321569, 0.321569, 0.321569, 1 ) ]
+}
+
+[sub_resource type="Animation" id=14]
+resource_name = "restart"
+tracks/0/type = "value"
+tracks/0/path = NodePath("restart:custom_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0.321569, 0.321569, 0.321569, 1 ) ]
+}
+
+[sub_resource type="Animation" id=15]
+resource_name = "stages"
+tracks/0/type = "value"
+tracks/0/path = NodePath("stages:custom_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0.321569, 0.321569, 0.321569, 1 ) ]
+}
+
+[sub_resource type="DynamicFont" id=16]
+font_data = ExtResource( 11 )
+
+[sub_resource type="Animation" id=17]
+length = 0.2
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("interface:margin_left")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1, 0.15, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ -651.0, -645, -651, -657, -651 ]
+}
+
+[sub_resource type="Animation" id=18]
+length = 0.5
+loop = true
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("interface:margin_left")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.05, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ -645, -657 ]
+}
+
+[sub_resource type="DynamicFont" id=19]
+font_data = ExtResource( 11 )
+
+[sub_resource type="DynamicFont" id=20]
+font_data = ExtResource( 11 )
+
+[sub_resource type="Animation" id=21]
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("parry:visible_characters")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ -1, 0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("parry:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 122.183, -274.774 ), Vector2( 122.183, -329.515 ) ]
+}
+
+[sub_resource type="Animation" id=22]
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("pParry:visible_characters")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ -1, 0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("pParry:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -5.514, -274.774 ), Vector2( -5.514, -329.515 ) ]
+}
+
+[node name="knight" type="KinematicBody2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_horizontal_guides_": [ -751.318, -852.026, -802.323, -702.918, -825.932, -723.235, -279.558 ]
+}
+
+[node name="sprites_knight" type="AnimatedSprite" parent="."]
+position = Vector2( 110, -3.51801 )
+frames = SubResource( 1 )
+animation = "idle"
+
+[node name="shape_colisao" type="CollisionShape2D" parent="."]
+position = Vector2( 20.4412, 11.8344 )
+shape = SubResource( 2 )
+
+[node name="area_toma_dano" type="Area2D" parent="."]
+editor/display_folded = true
+collision_layer = 4
+collision_mask = 4
+
+[node name="area_dano" type="CollisionShape2D" parent="area_toma_dano"]
+position = Vector2( 14.6658, 9.77716 )
+shape = SubResource( 3 )
+
+[node name="touch" type="TouchScreenButton" parent="."]
+position = Vector2( 272.527, -288.722 )
+scale = Vector2( -103.204, 57.7864 )
+shape = SubResource( 4 )
+
+[node name="camera" type="Camera2D" parent="."]
+position = Vector2( 286.905, -310.255 )
+scale = Vector2( 1.23435, 0.711617 )
+current = true
+drag_margin_h_enabled = false
+drag_margin_v_enabled = false
+
+[node name="movimentos_camera" type="AnimationPlayer" parent="."]
+anims/shake_defesa = SubResource( 5 )
+anims/shake_screen = SubResource( 6 )
+anims/zoom_in = SubResource( 7 )
+anims/zoom_out = SubResource( 8 )
+anims/zoom_shake = SubResource( 9 )
+
+[node name="interface" parent="." instance=ExtResource( 9 )]
+margin_left = -657.0
+margin_top = -770.0
+margin_right = -653.617
+margin_bottom = -800.565
+rect_scale = Vector2( 0.95, 0.95 )
+rect_pivot_offset = Vector2( 923.177, 57.8184 )
+
+[node name="ending" type="Sprite" parent="."]
+editor/display_folded = true
+visible = false
+position = Vector2( 797.365, -312.435 )
+texture = ExtResource( 10 )
+
+[node name="touch_fim" type="TouchScreenButton" parent="ending"]
+position = Vector2( -551.119, -144.445 )
+scale = Vector2( 13.8911, 5.2756 )
+shape = SubResource( 10 )
+
+[node name="touch_restart" type="TouchScreenButton" parent="ending"]
+position = Vector2( -551.119, -13.7609 )
+scale = Vector2( 13.8911, 5.2756 )
+shape = SubResource( 10 )
+
+[node name="congratz" type="Label" parent="ending"]
+margin_left = -878.093
+margin_top = -315.596
+margin_right = -750.093
+margin_bottom = -299.596
+rect_scale = Vector2( 5, 5 )
+custom_fonts/font = SubResource( 11 )
+text = "Try again!"
+align = 1
+
+[node name="3" type="ColorRect" parent="ending"]
+margin_left = -686.641
+margin_top = -195.886
+margin_right = -646.641
+margin_bottom = -155.886
+rect_scale = Vector2( 6.86105, 2.3978 )
+color = Color( 0.545098, 0.545098, 0.545098, 1 )
+
+[node name="4" type="ColorRect" parent="ending"]
+margin_left = -686.641
+margin_top = -60.1481
+margin_right = -646.641
+margin_bottom = -20.1481
+rect_scale = Vector2( 6.86105, 2.3978 )
+color = Color( 0.545098, 0.545098, 0.545098, 1 )
+
+[node name="stages" type="Label" parent="ending"]
+margin_left = -742.087
+margin_top = -167.172
+margin_right = -614.087
+margin_bottom = -151.172
+rect_scale = Vector2( 3, 3 )
+custom_fonts/font = SubResource( 11 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Stages"
+align = 1
+
+[node name="restart" type="Label" parent="ending"]
+margin_left = -742.087
+margin_top = -31.1665
+margin_right = -614.087
+margin_bottom = -15.1665
+rect_scale = Vector2( 3, 3 )
+custom_fonts/font = SubResource( 11 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Restart"
+align = 1
+
+[node name="color" type="AnimationPlayer" parent="ending"]
+anims/restart = SubResource( 12 )
+anims/stages = SubResource( 13 )
+
+[node name="after_win" type="Sprite" parent="."]
+editor/display_folded = true
+visible = false
+position = Vector2( 298.073, -459.419 )
+scale = Vector2( 1, 0.97 )
+texture = ExtResource( 12 )
+
+[node name="touch_fim" type="TouchScreenButton" parent="after_win"]
+position = Vector2( 143.153, 186.645 )
+scale = Vector2( 13.8911, 5.2756 )
+shape = SubResource( 10 )
+
+[node name="touch_restart" type="TouchScreenButton" parent="after_win"]
+position = Vector2( -283.348, 187.757 )
+scale = Vector2( 13.8911, 5.2756 )
+shape = SubResource( 10 )
+
+[node name="congratz" type="Label" parent="after_win"]
+margin_left = -321.847
+margin_top = -315.596
+margin_right = -193.847
+margin_bottom = -299.596
+rect_scale = Vector2( 5, 5 )
+custom_fonts/font = SubResource( 11 )
+text = "Congratulations!"
+align = 1
+
+[node name="1" type="ColorRect" parent="after_win"]
+margin_left = -419.6
+margin_top = 140.044
+margin_right = -379.6
+margin_bottom = 180.044
+rect_scale = Vector2( 6.86105, 2.3978 )
+color = Color( 0.545098, 0.545098, 0.545098, 1 )
+
+[node name="2" type="ColorRect" parent="after_win"]
+margin_left = 7.488
+margin_top = 140.044
+margin_right = 47.488
+margin_bottom = 180.044
+rect_scale = Vector2( 6.86105, 2.3978 )
+color = Color( 0.545098, 0.545098, 0.545098, 1 )
+
+[node name="stages" type="Label" parent="after_win"]
+margin_left = -47.815
+margin_top = 170.352
+margin_right = 80.185
+margin_bottom = 186.352
+rect_scale = Vector2( 3, 3 )
+custom_fonts/font = SubResource( 11 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Stages"
+align = 1
+
+[node name="restart" type="Label" parent="after_win"]
+margin_left = -474.316
+margin_top = 170.352
+margin_right = -346.316
+margin_bottom = 186.352
+rect_scale = Vector2( 3, 3 )
+custom_fonts/font = SubResource( 11 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Restart"
+align = 1
+
+[node name="color" type="AnimationPlayer" parent="after_win"]
+anims/restart = SubResource( 14 )
+anims/stages = SubResource( 15 )
+
+[node name="Texto_fim" type="Label" parent="after_win"]
+margin_left = -562.0
+margin_top = -162.0
+margin_right = -216.0
+margin_bottom = -78.0
+rect_scale = Vector2( 3, 3 )
+custom_fonts/font = SubResource( 16 )
+text = "Teste 321"
+align = 1
+autowrap = true
+
+[node name="movimento_stamina" type="AnimationPlayer" parent="."]
+anims/low = SubResource( 17 )
+anims/medio = SubResource( 18 )
+
+[node name="texto" type="Label" parent="."]
+visible = false
+margin_left = -660.935
+margin_top = -475.47
+margin_right = -543.935
+margin_bottom = -459.47
+rect_scale = Vector2( 16.2291, 16.2291 )
+custom_fonts/font = SubResource( 19 )
+text = " Touch to start"
+
+[node name="button_end" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 13 )
+volume_db = 11.612
+
+[node name="passos" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 14 )
+
+[node name="parry" type="Label" parent="."]
+margin_left = 122.183
+margin_top = -329.515
+margin_right = 171.183
+margin_bottom = -313.515
+rect_scale = Vector2( 5, 5 )
+custom_fonts/font = SubResource( 20 )
+text = "Parry!"
+percent_visible = 0.0
+
+[node name="pParry" type="Label" parent="."]
+margin_left = -5.514
+margin_top = -329.515
+margin_right = 110.486
+margin_bottom = -313.515
+rect_scale = Vector2( 5, 5 )
+custom_fonts/font = SubResource( 20 )
+text = "Perfect Parry!"
+percent_visible = 0.0
+
+[node name="anim_parry" type="AnimationPlayer" parent="."]
+anims/parry = SubResource( 21 )
+anims/perfect = SubResource( 22 )
+
+[node name="dragon" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 15 )
+volume_db = 24.0
+
+[node name="dando_hit" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 16 )
+
+[node name="acertou_parry" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 17 )
+volume_db = 8.078
+
+[node name="acertou_pp" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 18 )
+volume_db = 9.592
+
+[node name="die" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 19 )
+
+[node name="defended" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 20 )
+
+[node name="tomou_hit" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( 0, 26.1403 )
+stream = ExtResource( 21 )
+[connection signal="area_entered" from="area_toma_dano" to="." method="_on_area_toma_dano_area_entered"]
+[connection signal="area_exited" from="area_toma_dano" to="." method="_on_area_toma_dano_area_exited"]
+[connection signal="pressed" from="touch" to="." method="_on_touch_pressed"]
+[connection signal="released" from="touch" to="." method="_on_touch_released"]
+[connection signal="pressed" from="ending/touch_fim" to="." method="_on_touch_fim_pressed"]
+[connection signal="pressed" from="ending/touch_restart" to="." method="_on_touch_restart_pressed"]
+[connection signal="pressed" from="after_win/touch_fim" to="." method="_on_touch_fim_pressed"]
+[connection signal="pressed" from="after_win/touch_restart" to="." method="_on_touch_restart_pressed"]

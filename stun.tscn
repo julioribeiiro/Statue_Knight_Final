@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://stun.tres" type="SpriteFrames" id=1]
+
+[node name="stun" type="AnimatedSprite"]
+position = Vector2( 123.501, -187.234 )
+frames = ExtResource( 1 )
+animation = "colorido"
+frame = 1
+playing = true

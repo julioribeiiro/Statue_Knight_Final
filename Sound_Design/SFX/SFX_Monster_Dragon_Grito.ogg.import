@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/SFX_Monster_Dragon_Grito.ogg-e9cb1a89ac3a334230e40a66242484f0.oggstr"
+
+[deps]
+
+source_file="res://Sound_Design/SFX/SFX_Monster_Dragon_Grito.ogg"
+dest_files=[ "res://.import/SFX_Monster_Dragon_Grito.ogg-e9cb1a89ac3a334230e40a66242484f0.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

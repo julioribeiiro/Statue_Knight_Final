@@ -1,0 +1,40 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://infinity_run.gd" type="Script" id=1]
+[ext_resource path="res://knight.tscn" type="PackedScene" id=2]
+[ext_resource path="res://fundo_4.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Minecraft.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://Monstro_P1_IR.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Sound_Design/OST/OST_Floresta_Loop.ogg" type="AudioStream" id=6]
+
+[sub_resource type="DynamicFont" id=1]
+size = 50
+font_data = ExtResource( 4 )
+
+[node name="infinity_run" type="Node"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_vertical_guides_": [ 1341.81 ]
+}
+
+[node name="knight" parent="." instance=ExtResource( 2 )]
+position = Vector2( 94.5649, 889.501 )
+
+[node name="ParallaxBackground" parent="." instance=ExtResource( 3 )]
+
+[node name="bg" type="ParallaxBackground" parent="."]
+
+[node name="score" type="Label" parent="bg"]
+margin_left = 123.944
+margin_top = 244.669
+margin_right = 407.944
+margin_bottom = 295.669
+custom_fonts/font = SubResource( 1 )
+text = "Score: 00000"
+
+[node name="Monstro_P1_IR" parent="." instance=ExtResource( 5 )]
+position = Vector2( 1601.81, 875.658 )
+
+[node name="fundo" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 6 )
+autoplay = true

@@ -1,0 +1,33 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://estagio_0.gd" type="Script" id=1]
+[ext_resource path="res://monstro_T0.tscn" type="PackedScene" id=2]
+[ext_resource path="res://knight.tscn" type="PackedScene" id=3]
+[ext_resource path="res://fim_estagio.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Sound_Design/OST/OST_Floresta_Loop.ogg" type="AudioStream" id=5]
+[ext_resource path="res://Sound_Design/OST/OST_Floresta_Intro.ogg" type="AudioStream" id=6]
+[ext_resource path="res://floresta_bg.tscn" type="PackedScene" id=7]
+
+[node name="cenario" type="Node"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_vertical_guides_": [ 753.287, 1398.3, -220.965, -219.319, -56.9333, -59.1437, 469.108, 2104.15, 2677.31, 2202.24, 2527.19, 2927.61 ]
+}
+
+[node name="monstro_T0" parent="." instance=ExtResource( 2 )]
+position = Vector2( 2751.4, 960.328 )
+
+[node name="knight" parent="." instance=ExtResource( 3 )]
+position = Vector2( 782.895, 954.657 )
+
+[node name="fim_estagio" parent="." instance=ExtResource( 4 )]
+position = Vector2( 3069.21, 968.834 )
+
+[node name="fundo" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+
+[node name="fundo2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+autoplay = true
+
+[node name="ParallaxBackground" parent="." instance=ExtResource( 7 )]

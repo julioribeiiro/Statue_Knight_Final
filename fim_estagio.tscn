@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://fim_estagio.gd" type="Script" id=1]
+
+[sub_resource type="CapsuleShape2D" id=1]
+height = 340.0
+
+[node name="fim_estagio" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="area" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 4
+
+[node name="colisao" type="CollisionShape2D" parent="area"]
+shape = SubResource( 1 )
+[connection signal="area_entered" from="area" to="." method="_on_area_area_entered"]

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/SFX_Monster_Dragon_Chegada].ogg-98463c2ed9df3b25c803cb4e6e31c9ea.oggstr"
+
+[deps]
+
+source_file="res://Sound_Design/SFX/SFX_Monster_Dragon_Chegada].ogg"
+dest_files=[ "res://.import/SFX_Monster_Dragon_Chegada].ogg-98463c2ed9df3b25c803cb4e6e31c9ea.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

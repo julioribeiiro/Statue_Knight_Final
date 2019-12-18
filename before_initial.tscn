@@ -1,0 +1,77 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://before_initial.gd" type="Script" id=1]
+[ext_resource path="res://Minecraft.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 65
+font_data = ExtResource( 2 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "text"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Label:percent_visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 10 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 10 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "clicked"
+} ]
+}
+
+[sub_resource type="DynamicFont" id=3]
+font_data = ExtResource( 2 )
+
+[sub_resource type="RectangleShape2D" id=4]
+
+[node name="before_initial" type="Node"]
+script = ExtResource( 1 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 207.266
+margin_top = 221.774
+margin_right = 1724.27
+margin_bottom = 701.774
+custom_fonts/font = SubResource( 1 )
+text = "Long ago, a cold war divided the kingdom. Hungry for new technology, the Crimson Magisterium opened a rift in the fabric of reality to tap into a unknown magic source. However, The All-Seer entered our world.
+Now, only a few survived, including...
+"
+autowrap = true
+percent_visible = 0.0
+
+[node name="anim" type="AnimationPlayer" parent="."]
+autoplay = "text"
+anims/text = SubResource( 2 )
+
+[node name="Play" type="Label" parent="."]
+margin_left = 785.133
+margin_top = 950.671
+margin_right = 879.133
+margin_bottom = 966.671
+rect_scale = Vector2( 4.82908, 4.82908 )
+custom_fonts/font = SubResource( 3 )
+text = "Click to play"
+
+[node name="touch" type="TouchScreenButton" parent="."]
+position = Vector2( 1002.07, 561.66 )
+scale = Vector2( 125.15, -61.7841 )
+shape = SubResource( 4 )
+[connection signal="pressed" from="touch" to="." method="_on_touch_pressed"]

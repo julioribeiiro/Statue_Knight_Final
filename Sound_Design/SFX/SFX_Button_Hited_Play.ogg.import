@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/SFX_Button_Hited_Play.ogg-34cd1ba0e03e20c85397aa85d495f1b3.oggstr"
+
+[deps]
+
+source_file="res://Sound_Design/SFX/SFX_Button_Hited_Play.ogg"
+dest_files=[ "res://.import/SFX_Button_Hited_Play.ogg-34cd1ba0e03e20c85397aa85d495f1b3.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

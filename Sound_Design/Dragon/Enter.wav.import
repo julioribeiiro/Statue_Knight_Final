@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Enter.wav-1fdf3f311d078cfa3e4c165309885838.sample"
+
+[deps]
+
+source_file="res://Sound_Design/Dragon/Enter.wav"
+dest_files=[ "res://.import/Enter.wav-1fdf3f311d078cfa3e4c165309885838.sample" ]
+
+[params]
+
+force/8_bit=true
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

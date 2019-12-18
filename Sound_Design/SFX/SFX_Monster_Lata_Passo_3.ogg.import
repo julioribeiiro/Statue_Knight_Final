@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/SFX_Monster_Lata_Passo_3.ogg-68109db785c5a8e0243d1e3711c1a832.oggstr"
+
+[deps]
+
+source_file="res://Sound_Design/SFX/SFX_Monster_Lata_Passo_3.ogg"
+dest_files=[ "res://.import/SFX_Monster_Lata_Passo_3.ogg-68109db785c5a8e0243d1e3711c1a832.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

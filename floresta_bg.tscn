@@ -1,0 +1,268 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Imagens_novas/Morgan assets/LEVEL - FLORESTA/floresta_LAYER_PARALLAX_3.png" type="Texture" id=1]
+[ext_resource path="res://Imagens_novas/Morgan assets/LEVEL - FLORESTA/floresta_LAYER_PARALLAX_2.png" type="Texture" id=2]
+[ext_resource path="res://Imagens_novas/Morgan assets/LEVEL - FLORESTA/floresta_LAYER_PARALLAX_1.png" type="Texture" id=3]
+[ext_resource path="res://Imagens_novas/Morgan assets/GROUND_cemiterio_floresta.png" type="Texture" id=4]
+
+[node name="ParallaxBackground" type="ParallaxBackground"]
+__meta__ = {
+"_edit_vertical_guides_": [ 4795.0 ]
+}
+
+[node name="arvores_tras" type="ParallaxLayer" parent="."]
+editor/display_folded = true
+position = Vector2( 498.875, 32.3204 )
+motion_scale = Vector2( 0.7, 1 )
+motion_mirroring = Vector2( 2523, 0 )
+
+[node name="Sprite" type="Sprite" parent="arvores_tras"]
+position = Vector2( -318.61, 672.438 )
+scale = Vector2( 5, 5 )
+texture = ExtResource( 1 )
+
+[node name="Sprite2" type="Sprite" parent="arvores_tras"]
+position = Vector2( 194.383, 672.438 )
+scale = Vector2( 5, 5 )
+texture = ExtResource( 1 )
+
+[node name="Sprite3" type="Sprite" parent="arvores_tras"]
+position = Vector2( 714.082, 672.438 )
+scale = Vector2( 5, 5 )
+texture = ExtResource( 1 )
+
+[node name="Sprite4" type="Sprite" parent="arvores_tras"]
+position = Vector2( 1242.16, 672.438 )
+scale = Vector2( 5, 5 )
+texture = ExtResource( 1 )
+
+[node name="Sprite5" type="Sprite" parent="arvores_tras"]
+position = Vector2( 1770.24, 672.438 )
+scale = Vector2( 5, 5 )
+texture = ExtResource( 1 )
+
+[node name="grama" type="ParallaxLayer" parent="."]
+editor/display_folded = true
+position = Vector2( 573.16, 0 )
+motion_scale = Vector2( 0.9, 1 )
+motion_mirroring = Vector2( 2927, 0 )
+
+[node name="grama" type="Sprite" parent="grama"]
+position = Vector2( -391.168, 951.933 )
+scale = Vector2( 5, 5 )
+texture = ExtResource( 2 )
+
+[node name="grama2" type="Sprite" parent="grama"]
+position = Vector2( -11.4095, 951.933 )
+scale = Vector2( 5, 5 )
+texture = ExtResource( 2 )
+
+[node name="grama3" type="Sprite" parent="grama"]
+position = Vector2( 359.171, 951.933 )
+scale = Vector2( 5, 5 )
+texture = ExtResource( 2 )
+
+[node name="grama4" type="Sprite" parent="grama"]
+position = Vector2( 719.553, 951.933 )
+scale = Vector2( 5, 5 )
+texture = ExtResource( 2 )
+
+[node name="grama5" type="Sprite" parent="grama"]
+position = Vector2( 1077.67, 951.933 )
+scale = Vector2( 5, 5 )
+texture = ExtResource( 2 )
+
+[node name="grama6" type="Sprite" parent="grama"]
+position = Vector2( 1440.32, 951.933 )
+scale = Vector2( 5, 5 )
+texture = ExtResource( 2 )
+
+[node name="grama7" type="Sprite" parent="grama"]
+position = Vector2( 1805.28, 951.933 )
+scale = Vector2( 5, 5 )
+texture = ExtResource( 2 )
+
+[node name="grama8" type="Sprite" parent="grama"]
+position = Vector2( 2172.44, 951.933 )
+scale = Vector2( 5, 5 )
+texture = ExtResource( 2 )
+
+[node name="arvore_frente" type="ParallaxLayer" parent="."]
+editor/display_folded = true
+position = Vector2( 573.16, 0 )
+motion_scale = Vector2( 0.9, 1 )
+motion_mirroring = Vector2( 2677, 0 )
+
+[node name="arvores" type="Sprite" parent="arvore_frente"]
+position = Vector2( 100.377, 604.931 )
+scale = Vector2( 5, 5 )
+texture = ExtResource( 3 )
+
+[node name="arvores2" type="Sprite" parent="arvore_frente"]
+position = Vector2( 1428.74, 604.931 )
+scale = Vector2( 5, 5 )
+texture = ExtResource( 3 )
+
+[node name="tiles" type="ParallaxLayer" parent="."]
+editor/display_folded = true
+position = Vector2( 70, 1140 )
+motion_mirroring = Vector2( 4795, 0 )
+
+[node name="Sprite" type="Sprite" parent="tiles"]
+scale = Vector2( 5, 5 )
+texture = ExtResource( 4 )
+
+[node name="Sprite18" type="Sprite" parent="tiles"]
+position = Vector2( 2400, 0 )
+scale = Vector2( 5, 5 )
+texture = ExtResource( 4 )
+
+[node name="Sprite10" type="Sprite" parent="tiles"]
+position = Vector2( 1200, 0 )
+scale = Vector2( 5, 5 )
+texture = ExtResource( 4 )
+
+[node name="Sprite27" type="Sprite" parent="tiles"]
+position = Vector2( 3600, 0 )
+scale = Vector2( 5, 5 )
+texture = ExtResource( 4 )
+
+[node name="Sprite6" type="Sprite" parent="tiles"]
+position = Vector2( 600, 0 )
+scale = Vector2( 5, 5 )
+texture = ExtResource( 4 )
+
+[node name="Sprite21" type="Sprite" parent="tiles"]
+position = Vector2( 3000, 0 )
+scale = Vector2( 5, 5 )
+texture = ExtResource( 4 )
+
+[node name="Sprite13" type="Sprite" parent="tiles"]
+position = Vector2( 1800, 0 )
+scale = Vector2( 5, 5 )
+texture = ExtResource( 4 )
+
+[node name="Sprite26" type="Sprite" parent="tiles"]
+position = Vector2( 4200, 0 )
+scale = Vector2( 5, 5 )
+texture = ExtResource( 4 )
+
+[node name="Sprite2" type="Sprite" parent="tiles"]
+position = Vector2( 150, 0 )
+scale = Vector2( 5, 5 )
+texture = ExtResource( 4 )
+
+[node name="Sprite23" type="Sprite" parent="tiles"]
+position = Vector2( 2550, 0 )
+scale = Vector2( 5, 5 )
+texture = ExtResource( 4 )
+
+[node name="Sprite15" type="Sprite" parent="tiles"]
+position = Vector2( 1350, 0 )
+scale = Vector2( 5, 5 )
+texture = ExtResource( 4 )
+
+[node name="Sprite29" type="Sprite" parent="tiles"]
+position = Vector2( 3750, 0 )
+scale = Vector2( 5, 5 )
+texture = ExtResource( 4 )
+
+[node name="Sprite7" type="Sprite" parent="tiles"]
+position = Vector2( 750, 0 )
+scale = Vector2( 5, 5 )
+texture = ExtResource( 4 )
+
+[node name="Sprite22" type="Sprite" parent="tiles"]
+position = Vector2( 3150, 0 )
+scale = Vector2( 5, 5 )
+texture = ExtResource( 4 )
+
+[node name="Sprite14" type="Sprite" parent="tiles"]
+position = Vector2( 1950, 0 )
+scale = Vector2( 5, 5 )
+texture = ExtResource( 4 )
+
+[node name="Sprite25" type="Sprite" parent="tiles"]
+position = Vector2( 4350, 0 )
+scale = Vector2( 5, 5 )
+texture = ExtResource( 4 )
+
+[node name="Sprite3" type="Sprite" parent="tiles"]
+position = Vector2( 300, 0 )
+scale = Vector2( 5, 5 )
+texture = ExtResource( 4 )
+
+[node name="Sprite32" type="Sprite" parent="tiles"]
+position = Vector2( 2700, 0 )
+scale = Vector2( 5, 5 )
+texture = ExtResource( 4 )
+
+[node name="Sprite16" type="Sprite" parent="tiles"]
+position = Vector2( 1500, 0 )
+scale = Vector2( 5, 5 )
+texture = ExtResource( 4 )
+
+[node name="Sprite30" type="Sprite" parent="tiles"]
+position = Vector2( 3900, 0 )
+scale = Vector2( 5, 5 )
+texture = ExtResource( 4 )
+
+[node name="Sprite8" type="Sprite" parent="tiles"]
+position = Vector2( 900, 0 )
+scale = Vector2( 5, 5 )
+texture = ExtResource( 4 )
+
+[node name="Sprite20" type="Sprite" parent="tiles"]
+position = Vector2( 3300, 0 )
+scale = Vector2( 5, 5 )
+texture = ExtResource( 4 )
+
+[node name="Sprite12" type="Sprite" parent="tiles"]
+position = Vector2( 2100, 0 )
+scale = Vector2( 5, 5 )
+texture = ExtResource( 4 )
+
+[node name="Sprite28" type="Sprite" parent="tiles"]
+position = Vector2( 4500, 0 )
+scale = Vector2( 5, 5 )
+texture = ExtResource( 4 )
+
+[node name="Sprite4" type="Sprite" parent="tiles"]
+position = Vector2( 450, 0 )
+scale = Vector2( 5, 5 )
+texture = ExtResource( 4 )
+
+[node name="Sprite17" type="Sprite" parent="tiles"]
+position = Vector2( 2850, 0 )
+scale = Vector2( 5, 5 )
+texture = ExtResource( 4 )
+
+[node name="Sprite9" type="Sprite" parent="tiles"]
+position = Vector2( 1650, 0 )
+scale = Vector2( 5, 5 )
+texture = ExtResource( 4 )
+
+[node name="Sprite31" type="Sprite" parent="tiles"]
+position = Vector2( 4050, 0 )
+scale = Vector2( 5, 5 )
+texture = ExtResource( 4 )
+
+[node name="Sprite5" type="Sprite" parent="tiles"]
+position = Vector2( 1050, 0 )
+scale = Vector2( 5, 5 )
+texture = ExtResource( 4 )
+
+[node name="Sprite19" type="Sprite" parent="tiles"]
+position = Vector2( 3450, 0 )
+scale = Vector2( 5, 5 )
+texture = ExtResource( 4 )
+
+[node name="Sprite11" type="Sprite" parent="tiles"]
+position = Vector2( 2250, 0 )
+scale = Vector2( 5, 5 )
+texture = ExtResource( 4 )
+
+[node name="Sprite24" type="Sprite" parent="tiles"]
+position = Vector2( 4650, 0 )
+scale = Vector2( 5, 5 )
+texture = ExtResource( 4 )

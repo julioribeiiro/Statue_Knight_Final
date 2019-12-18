@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/OST_Floresta_Intro.ogg-8ddda2a8c54b9dc4246a557a9be20c46.oggstr"
+
+[deps]
+
+source_file="res://Sound_Design/OST/OST_Floresta_Intro.ogg"
+dest_files=[ "res://.import/OST_Floresta_Intro.ogg-8ddda2a8c54b9dc4246a557a9be20c46.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

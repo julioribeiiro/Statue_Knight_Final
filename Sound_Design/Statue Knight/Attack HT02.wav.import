@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Attack HT02.wav-e507c39a8125d63d6cf13a38ed772622.sample"
+
+[deps]
+
+source_file="res://Sound_Design/Statue Knight/Attack HT02.wav"
+dest_files=[ "res://.import/Attack HT02.wav-e507c39a8125d63d6cf13a38ed772622.sample" ]
+
+[params]
+
+force/8_bit=true
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

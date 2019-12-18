@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/SFX_Monster_Dragon_Hited_1.ogg-7faeaa5f2d9f7500254965f1d81c71ff.oggstr"
+
+[deps]
+
+source_file="res://Sound_Design/SFX/SFX_Monster_Dragon_Hited_1.ogg"
+dest_files=[ "res://.import/SFX_Monster_Dragon_Hited_1.ogg-7faeaa5f2d9f7500254965f1d81c71ff.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

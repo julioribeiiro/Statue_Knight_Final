@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/SFX_Player_Passos.ogg-1b294cb23f1c8c2e02eb906e55683371.oggstr"
+
+[deps]
+
+source_file="res://Sound_Design/SFX/SFX_Player_Passos.ogg"
+dest_files=[ "res://.import/SFX_Player_Passos.ogg-1b294cb23f1c8c2e02eb906e55683371.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
